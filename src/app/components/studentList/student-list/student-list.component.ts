@@ -9,7 +9,7 @@ import { StudentService } from 'src/app/services/student.service';
 })
 export class StudentListComponent implements OnInit {
 
-  students: Student[] = [];
+  studentList: Student[] = [];
 
   constructor(private studentService: StudentService ) { }
 
@@ -17,7 +17,7 @@ export class StudentListComponent implements OnInit {
     this.studentService.getAllStudents()
     .subscribe({
       next: (students) => {
-        this.students = students;
+        this.studentList = students;
       }
       // error: (response) =>{
       //   console.log(response);

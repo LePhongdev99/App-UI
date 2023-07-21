@@ -1,0 +1,11 @@
+table, th, td{
+    border:1px solid black;
+}
+table{
+    border-collapse:collapse;
+    width:70%;height:auto;
+}
+tr:hover{
+    background-color:#ddd;
+    cursor:pointer;
+}

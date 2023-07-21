@@ -14,5 +14,20 @@ export class StudentService {
     return this.http.get<Student[]>('https://localhost:7212/getStudent');
   }
 
+  addStudent(addStudentRequest: Student): Observable<Student>{
+    addStudentRequest.id = "9245fe4a-d402-451c-b9ed-9c1a04247482";
+    return this.http.post<Student>('https://localhost:7212/createStudent', addStudentRequest);
+  }
 
+  getStudent(id: string): Observable<Student>{
+    return this.http.get<Student>('https://localhost:7212/getStudent/'+ id);
+  }
+
+  updateStudent(id: string, editStudentRequest: Student): Observable<Student>{
+    return this.http.put<Student>('https://localhost:7212/updateStudent/' + id,editStudentRequest );
+  }
+
+  deleteStudent(id: string): Observable<Student>{
+    return this.http.delete<Student>('https://localhost:7212/deleteStudent/' + id);
+  }
 }

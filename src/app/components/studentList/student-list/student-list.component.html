@@ -1,9 +1,10 @@
 <div>
-    <h1>Students</h1>
+    <h1>STUDENT LIST</h1>
 </div>
-<table *ngIf="students && students.length > 0" >
+<table *ngIf="studentList && studentList.length > 0" >
     <thead>
         <tr>
+            <th>STT</th>
             <th>Id</th>
             <th>Name</th>
             <th>Email</th>
@@ -12,13 +13,17 @@
         </tr>
     </thead>
     <tbody>
-       <tr *ngFor="let student of students">
+       <tr *ngFor="let student of studentList">
+            <td>{{studentList.indexOf(student) + 1}}</td>
             <td>{{student.id}}</td>
             <td>{{student.name}}</td>
             <td>{{student.email}}</td>
             <td>{{student.address}}</td>
             <td>{{student.scheduleId}}</td>
+            <td><a [routerLink]='["../edit-student",student.id]'>Edit</a></td>
+            
        </tr>
     </tbody>
 </table>
-<p *ngIf="!students || students.length <= 0">No Students Found</p>
+<p *ngIf="!studentList || studentList.length <= 0">No Students Found</p>
+<router-outlet></router-outlet>

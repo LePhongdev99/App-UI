@@ -1,7 +1,7 @@
 export interface Student {
-    id: bigint,
+    id: string,
     name: string,
     email: string,
     address: string,
-    scheduleId: bigint,
+    scheduleId: number,
 }
